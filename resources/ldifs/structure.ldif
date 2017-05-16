@@ -5,30 +5,30 @@ objectClass: organizationalUnit
 objectClass: top
 ou: people
 
-dn: cn=gerrit,ou=people,${SLAPD_FULL_DOMAIN}
+dn: cn=${GERRIT_PLATFORM_USERNAME},ou=people,${SLAPD_FULL_DOMAIN}
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
 objectClass: top
-cn: gerrit
-displayName: gerrit
-givenName: gerrit
-mail: gerrit@${SLAPD_DOMAIN}
-sn: gerrit
-uid: gerrit
+cn: ${GERRIT_PLATFORM_USERNAME}
+displayName: ${GERRIT_PLATFORM_USERNAME}
+givenName: ${GERRIT_PLATFORM_USERNAME}
+mail: ${GERRIT_PLATFORM_USERNAME}@${SLAPD_DOMAIN}
+sn: ${GERRIT_PLATFORM_USERNAME}
+uid: ${GERRIT_PLATFORM_USERNAME}
 userPassword:: ${GERRIT_PASSWORD}
 
-dn: cn=jenkins,ou=people,${SLAPD_FULL_DOMAIN}
+dn: cn=${JENKINS_PLATFORM_USERNAME},ou=people,${SLAPD_FULL_DOMAIN}
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
 objectClass: top
-cn: jenkins
-displayName: jenkins
-givenName: jenkins
-mail: jenkins@${SLAPD_DOMAIN}
-sn: jenkins
-uid: jenkins
+cn: ${JENKINS_PLATFORM_USERNAME}
+displayName: ${JENKINS_PLATFORM_USERNAME}
+givenName: ${JENKINS_PLATFORM_USERNAME}
+mail: ${JENKINS_PLATFORM_USERNAME}@${SLAPD_DOMAIN}
+sn: ${JENKINS_PLATFORM_USERNAME}
+uid: ${JENKINS_PLATFORM_USERNAME}
 userPassword:: ${JENKINS_PASSWORD}
 
 dn: cn=nexus,ou=people,${SLAPD_FULL_DOMAIN}
@@ -66,7 +66,7 @@ dn: cn=administrators,ou=groups,${SLAPD_FULL_DOMAIN}
 objectClass: groupOfUniqueNames
 objectClass: top
 cn: administrators
-uniqueMember: cn=jenkins,ou=people,${SLAPD_FULL_DOMAIN}
+uniqueMember: cn=${JENKINS_PLATFORM_USERNAME},ou=people,${SLAPD_FULL_DOMAIN}
 uniqueMember: cn=${INITIAL_ADMIN_USER},ou=people,${SLAPD_FULL_DOMAIN}
 
 dn: cn=sonar-administrators,ou=groups,${SLAPD_FULL_DOMAIN}
