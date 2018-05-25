@@ -1,4 +1,4 @@
-FROM dinkel/openldap:2.4.40
+FROM dinkel/openldap:latest
 
 MAINTAINER Darren Jackson, <darren.a.jackson>
 
