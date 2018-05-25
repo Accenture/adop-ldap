@@ -60,7 +60,7 @@ RUN wget -O /root/openldap-ppolicy-check-password-1.1.tar.gz https://github.com/
 	cd openldap-ppolicy-check-password-1.1 && \
 	make install  CONFIG="/etc/ldap/check_password.conf" LDAP_INC="-I/root/openldap-2.4.44/include/ -I/root/openldap-2.4.44/servers/slapd" \
 	CRACKLIB="/lib/cracklib/" CRACKLIB_LIB="/usr/lib/libcrack.so.2" LIBDIR="/usr/lib/ldap/"
-
+	
 # Cleanup
 RUN DEBIAN_FRONTEND=noninteractive apt-get remove -y wget gcc libdb-dev make && rm -rf /root/*
 
