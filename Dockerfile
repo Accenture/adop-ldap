@@ -38,10 +38,10 @@ DEBIAN_FRONTEND=noninteractive apt-get install -y ldap-utils wget gcc make libdb
 apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Get openldap source to compile check password
-RUN wget -O /root/openldap-2.4.40.tgz https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.40.tgz && \
+RUN wget -O /root/openldap-2.4.40.tgz https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.44.tgz && \
 	cd /root && \
-	tar -zxvf openldap-2.4.40.tgz &&  \
-	cd openldap-2.4.40 && ./configure && \
+	tar -zxvf openldap-2.4.44.tgz &&  \
+	cd openldap-2.4.44 && ./configure && \
 	make depend
 
 RUN wget -O /root/cracklib-2.9.6.tar.gz https://github.com/cracklib/cracklib/releases/download/cracklib-2.9.6/cracklib-2.9.6.tar.gz && \
