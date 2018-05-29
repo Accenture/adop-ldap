@@ -1,4 +1,4 @@
-FROM timhawes/openldap:latest
+FROM fatimajavaid/open-ldap:latest
 
 #MAINTAINER Darren Jackson, <darren.a.jackson>
 
