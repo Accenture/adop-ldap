@@ -38,10 +38,10 @@ DEBIAN_FRONTEND=noninteractive apt-get install -y ldap-utils wget gcc make libdb
 apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Get openldap source to compile check password
-RUN wget -O /root/openldap-2.4.44.tgz https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.44.tgz && \
+RUN wget -O /root/openldap-2.4.46.tgz https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.46.tgz && \
 	cd /root && \
-	tar -zxvf openldap-2.4.44.tgz &&  \
-	cd openldap-2.4.44 && ./configure && \
+	tar -zxvf openldap-2.4.46.tgz &&  \
+	cd openldap-2.4.46 && ./configure && \
 	make depend
 
 RUN wget -O /root/cracklib-2.9.6.tar.gz https://github.com/cracklib/cracklib/releases/download/cracklib-2.9.6/cracklib-2.9.6.tar.gz && \
@@ -58,7 +58,7 @@ RUN wget -O /root/cracklib-words-2.9.6.gz https://github.com/cracklib/cracklib/r
 RUN wget -O /root/openldap-ppolicy-check-password-1.1.tar.gz https://github.com/ltb-project/openldap-ppolicy-check-password/archive/v1.1.tar.gz && \
 	cd /root && gunzip openldap-ppolicy-check-password-1.1.tar.gz && tar -xvf openldap-ppolicy-check-password-1.1.tar && \
 	cd openldap-ppolicy-check-password-1.1 && \
-	make install  CONFIG="/etc/ldap/check_password.conf" LDAP_INC="-I/root/openldap-2.4.44/include/ -I/root/openldap-2.4.44/servers/slapd" \
+	make install  CONFIG="/etc/ldap/check_password.conf" LDAP_INC="-I/root/openldap-2.4.46/include/ -I/root/openldap-2.4.46/servers/slapd" \
 	CRACKLIB="/lib/cracklib/" CRACKLIB_LIB="/usr/lib/libcrack.so.2" LIBDIR="/usr/lib/ldap/"
 	
 # Cleanup
