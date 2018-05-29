@@ -1,6 +1,6 @@
-FROM dinkel/openldap:latest
+FROM timhawes/openldap:latest
 
-MAINTAINER Darren Jackson, <darren.a.jackson>
+#MAINTAINER Darren Jackson, <darren.a.jackson>
 
 # Replicate all default environment variables from the base image and customize the needed one's. 
 # This is to be able to use a custom entrypoint and perform all needed settings
