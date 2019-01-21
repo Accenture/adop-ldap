@@ -37,6 +37,25 @@ apt-get update && \
 DEBIAN_FRONTEND=noninteractive apt-get install -y ldap-utils wget gcc make libdb-dev && \
 apt-get clean && rm -rf /var/lib/apt/lists/*
 
+RUN apt-get update && \
+    DEBIAN_FRONTEND=non-interactive apt-get install -y bash=4.3-11+deb8u1 \
+    libc-bin=2.19-18+deb8u10 \
+    libgnutls-deb0-28=3.3.8-6+deb8u7 \
+    libhogweed2=2.7.1-5+deb8u2 \
+    libncurses5=5.9+20140913-1+deb8u3 \
+    libncursesw5=5.9+20140913-1+deb8u3 \
+    libnettle4=2.7.1-5+deb8u2 \
+    perl=5.20.2-3+deb8u12 \
+    libsystemd0=215-17+deb8u8 \
+    libtinfo5=5.9+20140913-1+deb8u3 \
+    libudev1=215-17+deb8u8 \
+    multiarch-support=2.19-18+deb8u10 \
+    ncurses-base=5.9+20140913-1+deb8u3 \
+    ncurses-bin=5.9+20140913-1+deb8u3 \
+    systemd=215-17+deb8u8 \
+    systemd-sysv=215-17+deb8u8 && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
 # Get openldap source to compile check password
 RUN wget -O /root/openldap-2.4.40.tgz https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.40.tgz && \
 	cd /root && \
